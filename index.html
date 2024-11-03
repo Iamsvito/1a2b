@@ -120,15 +120,20 @@
         }
 
         function shareScore() {
-            if (bestScoreData.score === "無" || bestScoreData.digitLength === "無") {
-                alert("你還沒有最佳成績可分享！");
-                return;
-            }
-            let shareText = `我在 1A2B 猜數字遊戲中（自訂數字長度：${bestScoreData.digitLength} 位）創下了 ${bestScoreData.score} 次的最佳成績！你能打破我的紀錄嗎？`;
-            navigator.clipboard.writeText(shareText)
-                .then(() => alert("成績已複製到剪貼簿！快去與朋友分享吧！"))
-                .catch(() => alert("複製失敗，請重試！"));
-        }
+    if (bestScoreData.score === "無" || bestScoreData.digitLength === "無") {
+        alert("你還沒有最佳成績可分享！");
+        return;
+    }
+
+    let shareText = `我在 1A2B 猜數字遊戲中（自訂數字長度：${bestScoreData.digitLength} 位）創下了 ${bestScoreData.score} 次的最佳成績！你能打破我的紀錄嗎？`;
+    let shareUrl = "https://iamsvito.github.io/1a2b/"; // 遊戲網站連結
+    let fullShareText = `${shareText} 快來試試看吧！ ${shareUrl}`;
+
+    // 將分享文本複製到剪貼簿
+    navigator.clipboard.writeText(fullShareText)
+        .then(() => alert("成績已複製到剪貼簿！快去與朋友分享吧！"))
+        .catch(() => alert("複製失敗，請重試！"));
+}
 
         function resetScoreboard() {
             if (confirm("確定要刪除最佳成績嗎？此操作無法恢復！")) {
@@ -153,5 +158,4 @@
     </script>
 </body>
 </html>
-
 
