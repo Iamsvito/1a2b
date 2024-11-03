@@ -80,7 +80,7 @@
         function startGame() {
             gameState.digitLength = parseInt(document.getElementById("digitLength").value);
             if (isNaN(gameState.digitLength) || gameState.digitLength < 2 || gameState.digitLength > 10) {
-                alert("請輸入 2 到 10 位數的長度！");
+                alert("請輸入 2 到 10 之間的數字");
                 return;
             }
             gameState.answer = generateAnswer(gameState.digitLength);
