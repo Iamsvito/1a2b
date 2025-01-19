@@ -42,3 +42,4 @@
 1. 克隆本專案至本地：
    ```bash
    git clone https://github.com/your-username/1a2b.git
+2. 使用任何瀏覽器打開 index.html 即可開始遊戲。
